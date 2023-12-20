@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;700&display=swap');
+
+:root {
+    --BG-Color: rgba(2, 3, 32, 1);
+    --SecBG-Color: rgba(6, 7, 54, 1);
+    --KillerColor: #5cb95c;
+    --VictimColor: #b02540;
+    --FontColor: #eee;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    color: var(--FontColor);
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+    transform: translate(0, -25%);
+    direction: rtl;
+}
+
+.killfeed-item {
+    width: fit-content;
+    background: linear-gradient(90deg, var(--SecBG-Color) 50%, var(--BG-Color) 100%);
+    border-radius: 15px;
+    display: flex;
+    padding: 5px;
+    margin: 10px 0;
+    animation: bounceIn .5s ease-in-out;
+    direction: ltr;
+}
+
+.player-killer {
+    background: linear-gradient(90deg, var(--KillerColor) -80%, var(--BG-Color) 100%);
+}
+
+.player-victim {
+    background: linear-gradient(90deg, var(--VictimColor) -80%, var(--BG-Color) 100%);
+}
+
+
+.remove-animation {
+    animation: bounceOut .5s ease-in-out;
+}
+
+.kill-distance {
+    font-size: 12px;
+    display: flex;
+    padding: 0 3px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 10px;
+}
+
+img {
+    height: 20px;
+}
+
+.images {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 5px;
+}
+
+.killer {
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+.victm {
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateX(2000px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(-30px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceOut {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(2000px);
+    }
+}
