@@ -42,13 +42,17 @@ local function GetPedName(ped)
             return GetPlayerName(NetworkGetPlayerIndexFromPed(ped))
         else
             if IsPedMale(ped) then
-                return Config.NPCs.Label .. " " ..
-                    Config.NPCs.Names.Male[math.random(1, #Config.NPCs.Names.Male)] ..
-                    " " .. Config.NPCs.Names.Male[math.random(1, #Config.NPCs.Names.Male)]
+                if Config.NPCs.enable then
+                    return Config.NPCs.Label .. " " ..
+                        Config.NPCs.Names.Male[math.random(1, #Config.NPCs.Names.Male)] ..
+                        " " .. Config.NPCs.Names.Male[math.random(1, #Config.NPCs.Names.Male)]
+                end
             else
-                return Config.NPCs.Label .. " " ..
-                    Config.NPCs.Names.Female[math.random(1, #Config.NPCs.Names.Female)] ..
-                    " " .. Config.NPCs.Names.Male[math.random(1, #Config.NPCs.Names.Male)]
+                if Config.NPCs.enable then
+                    return Config.NPCs.Label .. " " ..
+                        Config.NPCs.Names.Female[math.random(1, #Config.NPCs.Names.Female)] ..
+                        " " .. Config.NPCs.Names.Male[math.random(1, #Config.NPCs.Names.Male)]
+                end
             end
         end
     end
