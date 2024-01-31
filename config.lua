@@ -2,14 +2,14 @@ Config = {}
 
 Config.ToggleKillfeed = {
     enable = true,
-    startHide = true,
+    startHide = false,
     commandName = 'killfeed'
 }
 
 Config.time = 5000 -- in ms
 Config.maxLines = 5
 Config.Radius = {
-    enable = true,
+    enable = false,
     Radius = 50.0
 }
 

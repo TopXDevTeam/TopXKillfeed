@@ -40,7 +40,7 @@ local function GetPedName(ped)
     else
         if IsPedAPlayer(ped) then
             return GetPlayerName(NetworkGetPlayerIndexFromPed(ped))
-        else
+        elseif not IsPedAPlayer(ped) and pedType == 4 or pedType == 5 then
             if IsPedMale(ped) then
                 if Config.NPCs.enable then
                     return Config.NPCs.Label .. " " ..
